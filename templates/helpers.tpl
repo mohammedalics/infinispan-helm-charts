@@ -99,7 +99,7 @@ Schema for default endpoint
 {{- define "infinispan-helm-charts.defaultEndpointSchema" -}}
    {{- range .Values.deploy.infinispan.server.security.securityRealms }}
       {{- if eq .name "default" }}
-         {{- if and .serverIdentities .serverIdentities.ssl -}}
+         {{- if .serverIdentities .serverIdentities.ssl -}}
                HTTPS
          {{- else -}}
                HTTP
